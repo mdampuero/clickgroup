@@ -1,0 +1,38 @@
+<div class="main-wrapper">
+    <app-header></app-header>
+    <div class="movie-list-area section-ptb-50 bg-black-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-12 me-auto ms-auto">
+                    <div class="movie-list-top-bar">
+                        <div class="movie-list-title">
+                            <h2 class="title">Mis favoritos</h2>
+                        </div>
+                        <div class="movie-list-clear">
+                            <button class="Watch-list-clear-btn" type="button" (click)="emptyFavorites()">Limpiar lista</button>
+                        </div>
+                    </div>
+                    <div class="movielist-wrap">
+                        <div class="single-movielist" *ngFor="let item of items; let i=index;">
+                            <div class="movielist-img-content">
+                                <div class="movielist-img">
+                                    <a routerLink="/eventos/{{ item.id }}">
+                                        <img src="{{ item.pictureBackground}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="movielist-content">
+                                    <h3 class="title"><a routerLink="/eventos/{{ item.id }}">{{ item.name }}</a></h3>
+                                    <p><app-date-from-to [item]="item"></app-date-from-to></p>
+                                </div>
+                            </div>
+                            <div class="movielist-close">
+                                <a class="watchlist-close-btn" (click)="favoriteService.removeFavorite(item.id)"><i class="zmdi zmdi-close"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

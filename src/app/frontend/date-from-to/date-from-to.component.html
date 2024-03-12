@@ -1,0 +1,4 @@
+<ng-container *ngIf="item.start_date">{{ item.start_date | date:'dd/MM/yyyy'}}</ng-container>
+<ng-container *ngIf="item.start_time"> {{ item.start_time }}</ng-container>
+<ng-container *ngIf="item.end_date"> - {{ item.end_date | date:'dd/MM/yyyy'}}</ng-container>
+<ng-container *ngIf="item.end_time"> {{ item.end_time }}</ng-container>

@@ -1,0 +1,5 @@
+<div class="movie-slider-active {{ sliderClassSelector}} nav-style-2" [style.visibility]="ready ? 'visible' : 'hidden'">
+    <div class="movie-wrap-plr" *ngFor="let item of items; let i=index;">
+        <app-single-card-event [item]="item"></app-single-card-event>
+    </div>
+</div>

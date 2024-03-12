@@ -1,0 +1,72 @@
+<header class="header-area bg-black section-padding-lr">
+    <div class="container-fluid">
+        <div class="header-wrap header-netflix-style">
+            <div class="logo-menu-wrap">
+                <!-- Logo -->
+                <div class="logo">
+                    <a routerLink="/"><img src="assets/images/logo/logo.png" alt=""></a>
+                </div>
+                <!-- Logo -->
+                <div class="main-menu main-theme-color-four">
+                    <nav class="main-navigation">
+                        <app-menu></app-menu>
+                    </nav>
+                </div>
+            </div>
+            <div class="right-side d-flex">
+                <!-- search-input-box start -->
+                <div class="header-search-2">
+                    <a class="search-toggle" href="#">
+                        <i class="zmdi zmdi-search s-open"></i>
+                        <i class="zmdi zmdi-close s-close"></i>
+                    </a>
+                    <div class="search-wrap-2">
+                        <form action="#">
+                            <input placeholder="Search" type="text">
+                            <button class="button-search"><i class="zmdi zmdi-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <!-- search-input-box end -->
+                <!-- notifications start -->
+                <div class="notifications-bar btn-group">
+                    <a routerLink="/micuenta" title="Mi cuenta" class="notifications-iocn white" >
+                        <i class="zmdi zmdi-account"></i>
+                    </a>
+                    <div class="dropdown-menu netflix-notifications-style red">
+                        <h5>Notifications</h5>
+                        <ul>
+                            <li class="single-notifications">
+                                <a href="#">
+                                    <span class="image"><img src="assets/images/review/author-01.png" alt=""></span>
+                                    <span class="notific-contents">
+                                        <span>Lorem ipsum dolor sit amet consectetur.</span>
+                                        <span class="time">21 hours ago</span>
+                                    </span>
+
+                                </a>
+                            </li>
+                            <li class="single-notifications">
+                                <a href="#">
+                                    <span class="image"><img src="assets/images/review/author-01.png" alt=""></span>
+                                    <span class="notific-contents">
+                                        <span>Lorem ipsum dolor sit amet consectetur.</span>
+                                        <span class="time">21 hours ago</span>
+                                    </span>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- our-profile-area end -->
+                <div class="subscribe-btn-wrap">
+                    <a role="button" routerLink="/login" class="subscribe-btn">Regístrate</a>
+                </div>
+                <!-- mobile-menu start -->
+                <div class="mobile-menu d-block d-lg-none"></div>
+                <!-- mobile-menu end -->
+            </div>
+        </div>
+    </div>
+</header>

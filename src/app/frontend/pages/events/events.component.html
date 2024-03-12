@@ -1,0 +1,53 @@
+<div class="main-wrapper">
+    <app-header></app-header>
+    <div class="breadcrumb-area breadcrumb-modify-padding bg-black-3">
+        <div class="container">
+            <div class="in-breadcrumb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3 breadcrumb-style-2" *ngIf="filters.categories">
+                            <select name="filterCategory" [(ngModel)]="filterCategory">
+                                <option value="">Todas las categorías</option>
+                                <option value="{{ item.id }}" *ngFor="let item of filters.categories; let i=index;">{{
+                                    item.name }}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 breadcrumb-style-2">
+                            <select name="name" id="first-name">
+                                <option value="">Todos los países</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 breadcrumb-style-2">
+                            <select name="name" id="first-name">
+                                <option value="">Todas las ciudades</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 breadcrumb-style-2">
+                            <div class="member-btn">
+                                <a class="member-btn-style" routerLink="/eventos">Filtrar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="movie-list section-padding-lr section-pt-50 section-pb-50 bg-black">
+        <div class="container-fluid">
+            <div class="row">
+                <ng-container *ngFor="let item of items.data; let i=index;">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12"  *ngIf="(filterCategory == item.category._id) || !filterCategory">
+                        <app-single-card-event 
+                        [item]="item"></app-single-card-event>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

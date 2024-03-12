@@ -1,0 +1,17 @@
+<div class="movie-wrap text-center mb-4">
+    <div class="movie-img">
+        <a routerLink="/eventos/{{ item.id }}" >
+            <img *ngIf="item.pictureCard" src="{{ item.pictureCard }}" alt="{{ item.name }}">
+            <img *ngIf="!item.pictureCard" src="assets/images/product/movie-17.jpg" alt="{{ item.name }}">
+        </a>
+        <button *ngIf="favoriteService.isInFavorites(item)" class="Watch-list-btn" (click)="favoriteService.removeFavorite(item.id)"><i class="zmdi zmdi-favorite"></i></button>
+        <button *ngIf="!favoriteService.isInFavorites(item)" class="Watch-list-btn" (click)="favoriteService.addToFavorites(item)"><i class="zmdi zmdi-favorite-outline"></i></button>
+    </div>
+    <div class="movie-content">
+        <h3 class="title"><a routerLink="/eventos/{{ item.id }}" >{{ item.name }}</a></h3>
+        <span>{{ item.duration }}</span>
+        <div class="movie-btn">
+            <a routerLink="/eventos/{{ item.id }}"  class="btn-style-hm4-2 animated">Ver más</a>
+        </div>
+    </div>
+</div>

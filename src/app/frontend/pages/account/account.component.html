@@ -1,0 +1,111 @@
+<div class="main-wrapper">
+    <app-header></app-header>
+    <div class="breadcrumb-area breadcrumb-modify-padding bg-black-2">
+        <div class="container">
+            <div class="in-breadcrumb">
+                <div class="row">
+                    <div class="col">
+                        <div class="breadcrumb-style-2 center">
+                            <h2>Mi cuenta</h2>
+                            <ul class="breadcrumb-list-2 black">
+                                <li><a routerLink="/">Inicio</a></li>
+                                <li>Mi cuenta</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+   
+    <!-- Page Conttent -->
+    <main class="my-account-wrapper section-pt-90 section-pb-90 bg-black">
+        <div class="container">
+            <div class="col-md-12 col-lg-12">
+                <!-- Nav tabs -->
+                <ul role="tablist" class="nav dashboard-list white mb--60">
+                    <li class="active" role="presentation"><a href="#account-details" data-bs-toggle="tab" class="tablist-btn active">Mi cuenta</a></li>
+                </ul>
+            </div>
+            
+            <div class="tab-content dashboard-content">
+                <div class="tab-pane active" id="account-details">
+                    <div class="row">
+                        <div class="col-lg-3 col-xl-2 col-md-3">
+                            <div class="our-profile-images mb--60 ">
+                                <div class="profile-media">
+                                    <div class="edit-profile">
+                                        <img src="assets/images/product/10.jpg" alt="">
+                                        <div class="btn-file">
+                                           <span class="btn-file-icon"><i class="zmdi zmdi-camera-bw"></i></span>
+                                           <input type="file">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-xl-10 col-md-9">
+                            <div class="account-form-container-wrapper our-product-left_m">
+                                <div class="login">
+                                    <div class="account-form-container">
+                                        <div class="account-login-form">
+                                            <form action="#">
+                                                <div class="my-account-form-wrap border-bottom-2 white pb--30">
+                                                    <h3>General Information</h3>
+                                                    <p>By letting us know your name, we can make our support experience much more personal.</p>
+                                                    <div class="row account-input-box">
+                                                        <div class="col-md-6 single-input-box">
+                                                            <label>First Name</label>
+                                                            <input type="text" name="first-name">
+                                                        </div>
+                                                        <div class="col-md-6 single-input-box">
+                                                            <label>Last Name</label>
+                                                            <input type="text" name="last-name">
+                                                        </div>
+                                                        <div class="col-md-6 single-input-box mt--15">
+                                                            <label>Display Name</label>
+                                                            <input type="text" value="Brent Robinson">
+                                                        </div>
+                                                        <div class="col-md-6 single-input-box mt--15">
+                                                            <label>Email Address</label>
+                                                            <input type="email" name="email-name" value="info@example.com">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="my-account-form-wrap border-bottom-2 white mt--30 pb--30">
+                                                    <h3>Password change</h3>
+                                                    <div class="row account-input-box">
+                                                        <div class="col-md-4 single-input-box mt--15">
+                                                            <label>Current Password:</label>
+                                                            <input type="password" name="user-password">
+                                                        </div>
+                                                        <div class="col-md-4 single-input-box mt--15">
+                                                            <label>New Password:</label>
+                                                            <input type="password" name="user-password">
+                                                        </div>
+                                                        <div class="col-md-4 single-input-box mt--15">
+                                                            <label>Confirm password</label>
+                                                            <input type="password" name="user-password">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="button-box mt--30">
+                                                    <a href="#" class="btn theme-color-four">Save Changes</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>    
+    <!-- Footer Area -->
+    <app-footer></app-footer>
+</div>
