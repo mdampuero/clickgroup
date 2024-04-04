@@ -1,8 +1,13 @@
-<div class="series-list section-padding-lr pb-5 bg-black" *ngFor="let item of data.data; let i=index;">
-    <div class="container-fluid">
-        <div class="section-title-4 st-border-bottom">
-            <h2>{{ item.name }}</h2>
+<ng-container *ngFor="let item of data.data; let i=index;" >
+<div class="series-list section-padding-lr pb-5 bg-black"  *ngIf="item.events.length > 0">
+        <div class="container-fluid">
+            <div class="section-title-4 st-border-bottom">
+                <h2>{{ item.name }}</h2>
+            </div>
+            <app-cards-slider [items]="item.events" [more]="item.more" [sliderClassSelector]="item.id"></app-cards-slider>
         </div>
-        <app-cards-slider [items]="item.events" [sliderClassSelector]="item.id"></app-cards-slider>
     </div>
+</ng-container>
+<div class="containerLoading slider-height" *ngIf="containerLoading">
+    <app-loading></app-loading>
 </div>

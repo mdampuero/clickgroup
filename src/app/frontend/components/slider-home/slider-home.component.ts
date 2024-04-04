@@ -8,6 +8,7 @@ declare var $: any;
 })
 export class SliderHomeComponent {
 	public data: any = {};
+	public containerLoading: boolean = true;
 	@ViewChild('slick') slick: ElementRef | any;
 	constructor(
 		public eventService: EventService
@@ -21,6 +22,11 @@ export class SliderHomeComponent {
 		this.eventService.home().subscribe(
 			(data: any) => {
 				this.data = data;
+				for(let i=0; i<this.data.data.length; i++){
+					
+					this.data.data[i].pictureBackground = (this.data.data[i].pictureBackground)?this.data.data[i].pictureBackground:'../../../../assets/images/product/default_full.jpg'
+				}
+				this.containerLoading = false; 
 				this.initSlick();
 			}
 		);

@@ -1,5 +1,19 @@
-<div class="movie-slider-active {{ sliderClassSelector}} nav-style-2" [style.visibility]="ready ? 'visible' : 'hidden'">
+<div class="movie-slider-active {{ sliderClassSelector}} sliderCategories nav-style-2">
     <div class="movie-wrap-plr" *ngFor="let item of items; let i=index;">
         <app-single-card-event [item]="item"></app-single-card-event>
+    </div>
+    <div class="movie-wrap-plr" *ngIf="more">
+        <div class="movie-wrap text-center mb-4">
+            <div class="movie-img">
+                <a routerLink="/eventos" [queryParams]="{ category: sliderClassSelector }">
+                    <img src="assets/images/product/view_more.jpeg">
+                </a>
+            </div>
+            <div class="movie-content">
+                <div class="movie-btn">
+                    <a routerLink="/eventos" [queryParams]="{ category: sliderClassSelector }" class="btn-style-hm4-2 animated">Ver más</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

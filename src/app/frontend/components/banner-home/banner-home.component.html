@@ -1,5 +1,15 @@
-<div class="banner-area bg-black mb-5">
-    <div class="series-banner-img">
-        <a href="series-details.html"><img src="https://htmldemo.net/streamo/streamo/assets/images/slider/series-2.png" alt=""></a>
+<ng-container *ngIf="!containerLoading">
+    <div class="banner-area bg-black mb-5" *ngIf="setting.banner">
+        <div class="series-banner-img">
+            <a href="{{ setting.banner_link }}" target="_blank" *ngIf="setting.banner_link">
+                <img src="{{ setting.banner }}" alt="{{ setting.banner_link }}">
+            </a>
+            <span *ngIf="!setting.banner_link">
+                <img src="{{ setting.banner }}">
+            </span>
+        </div>
     </div>
+</ng-container>
+<div class="containerLoading slider-height" *ngIf="containerLoading">
+    <app-loading></app-loading>
 </div>

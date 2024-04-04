@@ -3064,7 +3064,7 @@ nav.sidebar-menu ul li a:hover {
     font-size: 12px;
   }
 }
-.subscribe-btn:hover {
+.subscribe-btn:hover, .subscribe-btn.active {
   color: #000000;
   background-color: #ffffff;
 }
@@ -7947,3 +7947,14 @@ select {
 }
 
 .slick-track{ margin-left: 0; }
+
+.containerLoading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-height{
+  height: 250px;
+}
+

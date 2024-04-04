@@ -20,26 +20,35 @@
     </div>
     <!--// Breadcrumb -->
     <div class="banner-area bg-black">
-        <div class="series-banner-img" class="single-hero-slider-wrap single-animation-wrap slider-height-hm4 bg-image-hm4 slider-bg-color-black d-flex align-items-center  bg-black" style="background-image:url('{{ data.event.pictureBackground}}');">
-            
+        <div class="series-banner-img" *ngIf="data.event.pictureBackground"
+            class="single-hero-slider-wrap single-animation-wrap slider-height-hm4 bg-image-hm4 slider-bg-color-black d-flex align-items-center  bg-black"
+            style="background-image:url('{{ data.event.pictureBackground}}');">
+        </div>
+        <div class="series-banner-img" *ngIf="!data.event.pictureBackground"
+            class="single-hero-slider-wrap single-animation-wrap slider-height-hm4 bg-image-hm4 slider-bg-color-black d-flex align-items-center  bg-black"
+            style="background-image:url('../../../../assets/images/product/default_full.jpg');">
         </div>
     </div>
     <div class="movie-details-wrap section-ptb-50 bg-black">
         <div class="container">
             <div class="movie-details-video-content-wrap">
                 <div class="movie-details-content">
-                    <button *ngIf="favoriteService.isInFavorites(data.event)" class="like-dislike-style float-right" (click)="favoriteService.removeFavorite(data.event.id)"><i class="zmdi zmdi-favorite"></i></button>
-                    <button *ngIf="!favoriteService.isInFavorites(data.event)" class="like-dislike-style float-right" (click)="favoriteService.addToFavorites(data.event)"><i class="zmdi zmdi-favorite-outline"></i></button>
+                    <button *ngIf="favoriteService.isInFavorites(data.event)" class="like-dislike-style float-right"
+                        (click)="favoriteService.removeFavorite(data.event.id)"><i
+                            class="zmdi zmdi-favorite"></i></button>
+                    <button *ngIf="!favoriteService.isInFavorites(data.event)" class="like-dislike-style float-right"
+                        (click)="favoriteService.addToFavorites(data.event)"><i
+                            class="zmdi zmdi-favorite-outline"></i></button>
                     <div class="movie-details-info">
                         <ul>
                             <li><span>Categoría: </span>{{ data.event.category.name }}</li>
                             <li *ngIf="data.event.start_date">
-                                <span>Fecha de inicio: </span> {{ data.event.start_date | date:'dd/MM/yyyy'}} 
+                                <span>Fecha de inicio: </span> {{ data.event.start_date | date:'dd/MM/yyyy'}}
                                 <ng-container *ngIf="data.event.start_time">
                                     a las {{ data.event.start_time }}
                                 </ng-container>
                             </li>
-                            
+
                             <li *ngIf="data.event.end_date">
                                 <span>Fecha de fin: </span> {{ data.event.end_date | date:'dd/MM/yyyy'}}
                                 <ng-container *ngIf="data.event.start_time">
@@ -48,23 +57,27 @@
                             </li>
 
                             <li *ngIf="data.event.url">
-                                <span>Link al evento: </span> <a href="{{ data.event.url }}" target="_blank">{{ data.event.url }}</a>
+                                <span>Link al evento: </span> <a href="{{ data.event.url }}" target="_blank">{{
+                                    data.event.url }}</a>
                             </li>
 
                         </ul>
                     </div>
+
                     <p *ngFor="let linea of data.event.description.split('\n')">
                         {{ linea }}
                     </p>
-                    
+
                 </div>
             </div>
         </div>
+        <ng-container *ngIf="data && data.event?.lat && data.event?.lng && data.event?.zoom">
+            <app-mapbox [inputLat]="data.event?.lat" [inputLng]="data.event?.lng" [inputZoom]="data.event?.zoom" [inputTitle]="data.event.name"></app-mapbox>
+        </ng-container>
     </div>
-    
     <div class="movie-list section-ptb-50 bg-black-2">
         <div class="container">
-            <app-similar-events [id]="id"></app-similar-events>
+            <app-similar-events [id]="id" [category]="data.event.category._id"></app-similar-events>
         </div>
     </div>
     <app-footer></app-footer>

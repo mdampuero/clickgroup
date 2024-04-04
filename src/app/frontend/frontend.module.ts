@@ -23,6 +23,8 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { FormsModule } from '@angular/forms';
 import { SimilarEventsComponent } from './components/similar-events/similar-events.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingComponent } from './components/loading/loading.component';
+import { MapboxComponent } from './components/mapbox/mapbox.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     FavoritesComponent,
     AccountComponent,
     AboutusComponent,
-    SimilarEventsComponent
+    SimilarEventsComponent,
+    LoadingComponent,
+    MapboxComponent
   ],
   imports: [
     FormsModule,

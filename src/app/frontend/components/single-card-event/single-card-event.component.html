@@ -2,7 +2,7 @@
     <div class="movie-img">
         <a routerLink="/eventos/{{ item.id }}" >
             <img *ngIf="item.pictureCard" src="{{ item.pictureCard }}" alt="{{ item.name }}">
-            <img *ngIf="!item.pictureCard" src="assets/images/product/movie-17.jpg" alt="{{ item.name }}">
+            <img *ngIf="!item.pictureCard" src="assets/images/product/default_card.jpg" alt="{{ item.name }}">
         </a>
         <button *ngIf="favoriteService.isInFavorites(item)" class="Watch-list-btn" (click)="favoriteService.removeFavorite(item.id)"><i class="zmdi zmdi-favorite"></i></button>
         <button *ngIf="!favoriteService.isInFavorites(item)" class="Watch-list-btn" (click)="favoriteService.addToFavorites(item)"><i class="zmdi zmdi-favorite-outline"></i></button>

@@ -1,6 +1,6 @@
 <div class="slider-area bg-black">
     <div class="container-fluid p-0">
-        <div class="hero-slider-four dot-style-1 nav-style-1" #slick>
+        <div class="hero-slider-four dot-style-1 nav-style-1" #slick *ngIf="!containerLoading">
             <div *ngFor="let item of data.data; let i=index;" class="single-hero-slider-wrap single-animation-wrap slider-height-hm4 bg-image-hm4 slider-bg-color-black d-flex align-items-center slider-bg-position-{{ i }} bg-black" style="background-image:url('{{ item.pictureBackground}}');">
                 <div class="slider-content-hm4 slider-animated">
                     <h1 class="title animated">{{ item.name }} </h1>
@@ -15,6 +15,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="slider-height-hm4 containerLoading" *ngIf="containerLoading">
+            <app-loading></app-loading>
         </div>
     </div>
 </div>

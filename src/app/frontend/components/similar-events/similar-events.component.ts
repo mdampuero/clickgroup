@@ -1,5 +1,6 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
 import { EventService } from 'src/app/services/api/events.service';
+declare var $: any;
 
 @Component({
 	selector: 'app-similar-events',
@@ -8,33 +9,74 @@ import { EventService } from 'src/app/services/api/events.service';
 })
 export class SimilarEventsComponent {
 	@Input() id: any;
+	@Input() public category: any;
 	public data: any = {};
+	public containerLoading: boolean = true;
 	constructor(
 		public eventService: EventService
 	) {
 
 	}
-	ngOnChanges(changes: SimpleChanges) {
-		// this.id = changes['id'].currentValue;
-		// this.getResult();
-		// Aquí puedes detectar y reaccionar a los cambios en los @Input()
-		// if (changes.miInput) {
-		//   const nuevoValor = changes.miInput.currentValue;
-		//   const valorAnterior = changes.miInput.previousValue;
-		//   console.log('Valor actual del Input:', nuevoValor);
-		//   console.log('Valor anterior del Input:', valorAnterior);
-
-		//   // Puedes realizar acciones adicionales aquí, como suscribirte a cambios, etc.
-		// }
-	}
+	
 	ngOnInit(): void {
 		this.getResult();
 	}
+
 	getResult() {
 		this.eventService.similar(this.id).subscribe(
 			(data: any) => {
 				this.data = data;
+				this.initSlick();
 			}
 		);
+	}
+
+	initSlick() {
+		setTimeout(() => {
+			var similarEvents = $('.similarEvents');
+			similarEvents.slick({
+				dots: false,
+				infinite: false,
+				slidesToShow: 6,
+				slidesToScroll: 1,
+				autoplay: false,
+				centerMode: false,
+				prevArrow: '<button type="button" class="slick-prev"><i class="zmdi zmdi-chevron-left"></i> </button>',
+				nextArrow: '<button type="button" class="slick-next"><i class="zmdi zmdi-chevron-right"></i></button>',
+				responsive: [
+					{
+						breakpoint: 1365,
+						settings: {
+							slidesToShow: 5,
+						}
+					},
+					{
+						breakpoint: 1199,
+						settings: {
+							slidesToShow: 4,
+						}
+					},
+					{
+						breakpoint: 992,
+						settings: {
+							slidesToShow: 3,
+						}
+					},
+					{
+						breakpoint: 767,
+						settings: {
+							slidesToShow: 2,
+						}
+					},
+					{
+						breakpoint: 479,
+						settings: {
+							slidesToShow: 1,
+						}
+					}
+				]
+			});
+            this.containerLoading = false;
+		}, 100)
 	}
 }

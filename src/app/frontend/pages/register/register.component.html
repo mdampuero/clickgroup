@@ -17,64 +17,73 @@
             </div>
         </div>
     </div>
-    <!-- Page Conttent -->
-    <main class="page-content">
-
-        <!-- login-register  -->
-        <div class="register-page section-ptb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 col-md-12 m-auto">
-                        <div class="login-register-wrapper">
-                            <!-- login-register-tab-list start -->
-                            <div class="login-register-tab-list nav">
-                                <a class="active" data-bs-toggle="tab" href="#lg1">
-                                    <h4> login </h4>
-                                </a>
-                                <a data-bs-toggle="tab" href="#lg2">
-                                    <h4> register </h4>
-                                </a>
-                            </div>
-                            <!-- login-register-tab-list end -->
-                            <div class="tab-content">
-                                <div id="lg1" class="tab-pane active">
-                                    <div class="login-form-container">
-                                        <div class="login-register-form">
-                                            <form action="#" method="post">
-                                                <div class="login-input-box">
-                                                    <input type="text" name="user-name" placeholder="User Name">
-                                                    <input type="password" name="user-password" placeholder="Password">
+    <div class="register-page bg-black section-pt-90 section-pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 m-auto">
+                    <div class="login-register-wrapper">
+                        <!-- login-register-tab-list start -->
+                        <div class="login-register-tab-list white nav">
+                            <a class="active" data-bs-toggle="tab" href="#lg1">
+                                <h4> login </h4>
+                            </a>
+                            <a data-bs-toggle="tab" href="#lg2">
+                                <h4> registrarse </h4>
+                            </a>
+                        </div>
+                        <!-- login-register-tab-list end -->
+                        <div class="tab-content">
+                            <div id="lg1" class="tab-pane active">
+                                <div class="login-form-container border-black">
+                                    <div class="login-register-form black-style">
+                                        <form action="#" method="post">
+                                            <div class="login-input-box">
+                                                <input type="text" name="user-name" placeholder="Usuario">
+                                                <input type="password" name="user-password" placeholder="Contraseña">
+                                            </div>
+                                            <div class="button-box">
+                                                <div class="login-toggle-btn">
+                                                    <input type="checkbox">
+                                                    <label>Recordarme</label>
+                                                    <a href="javascript:void(0)">¿Olvidatse tu contraseña?</a>
                                                 </div>
                                                 <div class="button-box">
-                                                    <div class="login-toggle-btn">
-                                                        <input type="checkbox">
-                                                        <label>Remember me</label>
-                                                        <a href="#">Forgot Password?</a>
-                                                    </div>
-                                                    <div class="button-box">
-                                                        <button class="login-btn btn"
-                                                            type="submit"><span>Login</span></button>
+                                                    <button class="login-btn btn" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal"
+                                                        type="submit"><span>Ingresar</span></button>
+                                                    <div class="social-style-1 mt-4 float-right">
+                                                        <a class="facebook" href="javascript:void(0)"><i
+                                                                class="zmdi zmdi-facebook"></i></a>
+                                                        <a class="instagram" href="javascript:void(0)"><i
+                                                                class="zmdi zmdi-google"></i></a>
                                                     </div>
                                                 </div>
-                                            </form>
-                                        </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                                <div id="lg2" class="tab-pane">
-                                    <div class="login-form-container">
-                                        <div class="login-register-form">
-                                            <form action="#" method="post">
-                                                <div class="login-input-box">
-                                                    <input type="text" name="user-name" placeholder="User Name">
-                                                    <input type="password" name="user-password" placeholder="Password">
-                                                    <input name="user-email" placeholder="Email" type="email">
+                            </div>
+                            <div id="lg2" class="tab-pane">
+                                <div class="login-form-container border-black">
+                                    <div class="login-register-form black-style">
+                                        <form action="#" method="post">
+                                            <div class="login-input-box">
+                                                <input type="text" name="user-name" placeholder="Usuario">
+                                                <input type="password" name="user-password" placeholder="Contraseña">
+                                                <input name="user-email" placeholder="Email" type="email">
+                                            </div>
+                                            <div class="button-box">
+                                                <button class="register-btn btn" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"
+                                                    type="submit"><span>Registrarse</span></button>
+                                                <div class="social-style-1 mt-4 float-right">
+                                                    <a class="facebook" href="javascript:void(0)"><i
+                                                            class="zmdi zmdi-facebook"></i></a>
+                                                    <a class="instagram" href="javascript:void(0)"><i
+                                                            class="zmdi zmdi-google"></i></a>
                                                 </div>
-                                                <div class="button-box">
-                                                    <button class="register-btn btn"
-                                                        type="submit"><span>Register</span></button>
-                                                </div>
-                                            </form>
-                                        </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -83,8 +92,21 @@
                 </div>
             </div>
         </div>
-        <!--// login-register End -->
-    </main>
+    </div>
     <!--// Page Conttent -->
     <app-footer></app-footer>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="subscribe-btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="zmdi zmdi-close s-close"></i></button>
+            </div>
+            <div class="modal-body text-center">
+                <h5 id="exampleModalLabel">Estamos trabajndo en esta sección, pronto podrás acceder.</h5>
+            </div>
+        </div>
+    </div>
 </div>

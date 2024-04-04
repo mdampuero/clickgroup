@@ -18,7 +18,7 @@ export class EventService {
 
   get(query: string) {
 
-    return this.http.get(`${environment.baseBEUrl}/api/events?search=${query}&offset=${this.offset}&limit=${this.limit}&sort=${this.sort}&direction=${this.direction}`);
+    return this.http.get(`${environment.baseBEUrl}/api/events/all?search=${query}&offset=${this.offset}&limit=${this.limit}&sort=${this.sort}&direction=${this.direction}`);
   }
   home() {
     return this.http.get(`${environment.baseBEUrl}/api/events/sliderHome`);
@@ -39,7 +39,7 @@ export class EventService {
   }
   getAll() {
     // return this.http.get(`${environment.baseBEUrl}/api/events?search%5Bvalue%5D=&start=0&length=-1&sort=name&direction=ASC`,this.login.createAuthorizationHeader());
-    return this.http.get(`${environment.baseBEUrl}/api/events?search%5Bvalue%5D=&start=0&length=-1&sort=name&direction=ASC`);
+    return this.http.get(`${environment.baseBEUrl}/api/events/all`);
   }
 
 }
