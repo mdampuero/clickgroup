@@ -1,0 +1,16 @@
+# mover este fila a /etc/systemd/system/clickgroup.service
+#sudo systemctl enable clickgroup
+#sudo systemctl start clickgroup
+
+[Unit]
+Description=clickgroup
+After=docker.service network.target
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a c-clickgroup
+ExecStop=/usr/bin/docker stop -t 2 c-clickgroup
+
+[Install]
+WantedBy=multi-user.target
+
