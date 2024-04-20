@@ -1,2 +1,5 @@
 #!/bin/bash
-ng serve --port 4201 
+folderName=$(basename "$PWD")
+echo "---- START CONTAINER ----"
+docker start c-"$folderName"
+
